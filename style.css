@@ -1,0 +1,165 @@
+:root {
+    --bg-color-start: #1a237e;
+    --bg-color-end: #0d1137;
+    --card-bg-color: rgba(255, 255, 255, 0.1);
+    --card-border-color: rgba(255, 255, 255, 0.2);
+    --text-color: #f0f0f0;
+    --primary-glow-color: rgba(147, 112, 219, 0.6);
+    --secondary-glow-color: rgba(0, 255, 255, 0.5);
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(45deg, var(--bg-color-start), var(--bg-color-end));
+    background-attachment: fixed;
+    color: var(--text-color);
+    margin: 0;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.glass-card {
+    background: var(--card-bg-color);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid var(--card-border-color);
+    border-radius: 16px;
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+.glass-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 70%);
+    transform: rotate(0deg);
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.glass-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 16px 40px 0 rgba(0, 0, 0, 0.5), 
+                0 0 20px var(--primary-glow-color), 
+                0 0 40px var(--secondary-glow-color);
+}
+
+.glass-card:hover::before {
+    opacity: 1;
+    transform: rotate(20deg);
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+header h1 code {
+    font-family: monospace;
+    background: rgba(0,0,0,0.2);
+    padding: 0.2rem 0.5rem;
+    border-radius: 6px;
+}
+
+header p {
+    font-size: 1.1rem;
+    font-weight: 300;
+}
+
+h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    border-bottom: 2px solid var(--card-border-color);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+h3 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #fff;
+}
+
+ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+ul li {
+    margin-bottom: 0.75rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+ul li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--secondary-glow-color);
+    font-weight: bold;
+}
+
+.tech-stack {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.tech-column {
+    background: rgba(0,0,0,0.15);
+    padding: 1.5rem;
+    border-radius: 12px;
+}
+
+.milestones {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.milestone {
+    border-left: 3px solid var(--primary-glow-color);
+    padding-left: 1.5rem;
+}
+
+.milestone h3 {
+    margin-top: 0;
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 1rem;
+    }
+
+    .glass-card {
+        padding: 1.5rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.75rem;
+    }
+}

@@ -1,0 +1,323 @@
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup-content {
+  background: #161b22;
+  border: 1px solid #30363d;
+  padding: 0;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 800px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+  display: flex;
+  flex-direction: column;
+  max-height: 90vh;
+  color: #c9d1d9;
+}
+
+.popup-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 25px;
+  background-color: #0d1117;
+  border-bottom: 1px solid #30363d;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.popup-header h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.close-button {
+  background: none;
+  border: none;
+  font-size: 1.75rem;
+  cursor: pointer;
+  color: #8b949e;
+  line-height: 1;
+}
+
+.popup-body {
+  padding: 25px;
+  overflow-y: auto;
+  flex-grow: 1;
+}
+
+.form-section {
+  background: #0d1117;
+  border: 1px solid #30363d;
+  border-radius: 6px;
+  padding: 20px;
+  margin-bottom: 25px;
+}
+
+.form-section h4 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #30363d;
+  padding-bottom: 10px;
+  font-size: 1.1rem;
+  color: #c9d1d9;
+}
+
+.form-group {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.label-with-button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.btn-generate {
+  background-color: #0d65d9;
+  color: white;
+  border: 1px solid #1f6feb;
+  padding: 4px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.75rem;
+  transition: background-color 0.2s;
+}
+
+.btn-generate:hover:not(:disabled) {
+  background-color: #1f6feb;
+}
+
+.btn-generate:disabled {
+  background-color: #30363d;
+  cursor: not-allowed;
+}
+
+/* AI Generation Section */
+.ai-generation-section {
+  background: linear-gradient(135deg, #0d1117 0%, #161b22 100%);
+  border: 2px solid #238636;
+  position: relative;
+}
+
+.ai-generation-section::before {
+  content: '🤖';
+  position: absolute;
+  top: -10px;
+  left: 20px;
+  background: #161b22;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+}
+
+.ai-generation-section h4 {
+  color: #238636;
+  border-bottom-color: #238636;
+}
+
+.ai-controls-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr auto;
+  gap: 15px;
+  align-items: end;
+}
+
+.control-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.control-group label {
+  font-weight: 500;
+  font-size: 0.8rem;
+  color: #8b949e;
+  text-align: left;
+}
+
+.btn-generate-main {
+  background: linear-gradient(135deg, #238636 0%, #2ea043 100%);
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 600;
+  white-space: nowrap;
+  box-shadow: 0 2px 4px rgba(35, 134, 54, 0.3);
+  transition: all 0.2s ease;
+}
+
+.btn-generate-main:hover:not(:disabled) {
+  background: linear-gradient(135deg, #2ea043 0%, #238636 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(35, 134, 54, 0.4);
+}
+
+.btn-generate-main:disabled {
+  background: #6e7681;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.language-select,
+.model-select {
+  padding: 6px 10px;
+  border: 1px solid #30363d;
+  border-radius: 4px;
+  background-color: #21262d;
+  color: #c9d1d9;
+  font-size: 0.75rem;
+  min-width: 140px;
+}
+
+.template-select:focus,
+.model-select:focus {
+  outline: none;
+  border-color: #238636;
+  box-shadow: 0 0 0 2px rgba(35, 134, 54, 0.3);
+}
+
+.btn-generate {
+  background-color: #238636;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.75rem;
+  white-space: nowrap;
+}
+
+.btn-generate:hover:not(:disabled) {
+  background-color: #2ea043;
+}
+
+.btn-generate:disabled {
+  background-color: #6e7681;
+  cursor: not-allowed;
+}
+
+.form-group label {
+  font-weight: 500;
+  text-align: right;
+  font-size: 0.875rem;
+}
+
+.form-group input[type="text"],
+.form-group input[type="date"],
+.form-group input[type="time"],
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #30363d;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  background-color: #010409;
+  color: #c9d1d9;
+  box-sizing: border-box;
+}
+
+.form-group textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+
+/* Style for the date and time picker icons */
+input[type="date"]::-webkit-calendar-picker-indicator,
+input[type="time"]::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator:hover,
+input[type="time"]::-webkit-calendar-picker-indicator:hover {
+    opacity: 1;
+}
+
+
+.form-group .radio-group {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.form-group .radio-group label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-weight: normal;
+    text-align: left;
+}
+
+
+.form-group .schedule-group {
+    display: flex;
+    gap: 10px;
+}
+
+.form-group .schedule-group input {
+    flex: 1;
+}
+
+.form-group .file-input-group {
+    display: flex;
+}
+
+.form-group .file-input-group input {
+    flex-grow: 1;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    background-color: #21262d;
+}
+
+.form-group .file-input-group button {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-left: 0;
+}
+
+
+.popup-footer {
+  display: flex;
+  justify-content: flex-end;
+  padding: 15px 25px;
+  border-top: 1px solid #30363d;
+  background-color: #0d1117;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  gap: 10px; /* Use gap for spacing */
+}
+
+
+
+.popup-footer .btn-save {
+    background-color: #238636;
+    color: white;
+    border-color: #2ea043;
+}
+
+.popup-footer .btn-save:hover:not(:disabled) {
+    background-color: #2ea44f;
+}

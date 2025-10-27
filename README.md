@@ -1,8 +1,8 @@
 # Multi-Upload Project
 
 Proyek ini terdiri dari dua bagian utama:
-- `ytuploader-backend`: Server backend yang ditulis dengan Node.js.
-- `ytuploader-frontend`: Aplikasi frontend yang dibuat dengan React.
+- `backend`: Server backend yang ditulis dengan Node.js.
+- `frontend`: Aplikasi frontend yang dibuat dengan React.
 
 ## Prasyarat
 

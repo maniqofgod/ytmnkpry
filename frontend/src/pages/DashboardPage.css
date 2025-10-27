@@ -1,0 +1,81 @@
+.dashboard-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.dashboard-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #161b22;
+    border-bottom: 1px solid #30363d;
+    z-index: 100;
+    box-sizing: border-box;
+    height: 60px; /* Explicit height */
+}
+
+main {
+    flex-grow: 1;
+    padding-top: 60px; /* Space for fixed header */
+    padding-bottom: 60px; /* Space for fixed bottom bar */
+    display: flex;
+    flex-direction: column;
+}
+
+.dashboard-header h1 {
+    font-size: 1.2em; /* Smaller font size */
+    margin: 0;
+}
+
+.dashboard-header .user-info button {
+    margin-left: 15px;
+    background-color: #21262d;
+    color: #c9d1d9;
+    border: 1px solid #30363d;
+}
+
+/* New Flexbox Layout */
+.dashboard-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    height: 100%;
+}
+
+.top-panels {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.top-panels > * {
+    flex: 1; /* Make both panels in top-panels take equal space */
+}
+
+.main-content-area {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    flex-grow: 1; /* Allow this area to grow */
+}
+
+/* Bottom Upload Bar */
+.bottom-upload-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #161b22;
+    border-top: 1px solid #30363d;
+    z-index: 100;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    height: 60px; /* Explicit height */
+}

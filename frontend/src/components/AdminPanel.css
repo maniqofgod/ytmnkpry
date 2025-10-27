@@ -1,0 +1,362 @@
+/* Main container dengan grid layout untuk User dan Client Secret sections */
+.admin-panel-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    align-items: start;
+}
+
+/* Base styling untuk semua management sections */
+.management-section {
+    background-color: #161b22;
+    border: 1px solid #30363d;
+    padding: 20px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    height: auto;
+    overflow: visible;
+}
+
+.admin-panel-container h4 {
+    margin: 0 0 10px 0;
+    font-size: 1.1em;
+    font-weight: 600;
+    color: #f0f6fc;
+    border-bottom: 1px solid #30363d;
+    padding-bottom: 10px;
+}
+
+.user-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.user-form input {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid #30363d;
+    border-radius: 6px;
+    background-color: #0d1117;
+    color: #c9d1d9;
+    box-sizing: border-box;
+}
+
+.user-form button {
+    align-self: flex-start;
+    background-color: #238636;
+    color: white;
+    border: 1px solid #2ea043;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.user-form button:hover {
+    background-color: #2ea043;
+}
+
+.user-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.user-table th,
+.user-table td {
+    padding: 8px 10px; /* Dikurangi dari 10px 12px */
+    text-align: left;
+    border-bottom: 1px solid #21262d;
+    font-size: 11px; /* Dikurangi dari 12px */
+}
+
+.user-table th {
+    background-color: #0d1117;
+    color: #c9d1d9;
+    font-weight: 600;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.edit-button {
+    background-color: #1f6feb;
+    color: white;
+    border: none;
+    padding: 4px 8px; /* Dikurangi dari 5px 10px */
+    border-radius: 4px; /* Dikurangi dari 6px */
+    cursor: pointer;
+    font-size: 10px; /* Dikurangi dari 12px */
+}
+
+.edit-button:hover {
+    background-color: #388bfd;
+}
+
+.delete-button {
+    background-color: #da3633;
+    color: white;
+    border: none;
+    padding: 4px 8px; /* Dikurangi dari 5px 10px */
+    border-radius: 4px; /* Dikurangi dari 6px */
+    cursor: pointer;
+    font-size: 10px; /* Dikurangi dari 12px */
+}
+
+.delete-button:hover {
+    background-color: #b62324;
+}
+
+/* Gaya untuk Modal (dapat digunakan kembali dari ClientSecretPanel.css jika ada) */
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: #161b22;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #30363d;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.modal-content h4 {
+    margin: 0;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #30363d;
+}
+
+.modal-content form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.modal-actions button {
+    padding: 8px 16px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+}
+
+.modal-actions button[type="submit"] {
+    background-color: #238636;
+    color: white;
+}
+
+/* Styling khusus untuk daftar API Gemini dengan scrolling */
+.gemini-scroll-wrapper {
+    max-height: 350px;
+    overflow-y: auto;
+    border: 1px solid #21262d;
+    border-radius: 6px;
+    background-color: #0d1117;
+    margin-top: 10px;
+    position: relative;
+}
+
+.gemini-scroll-wrapper::-webkit-scrollbar {
+    width: 8px; /* Dikurangi dari 12px */
+}
+
+.gemini-scroll-wrapper::-webkit-scrollbar-track {
+    background: #161b22;
+    border-radius: 6px;
+}
+
+.gemini-scroll-wrapper::-webkit-scrollbar-thumb {
+    background: #30363d;
+    border-radius: 6px;
+    border: 2px solid #161b22;
+}
+
+.gemini-scroll-wrapper::-webkit-scrollbar-thumb:hover {
+    background: #484f58;
+}
+
+.gemini-scroll-wrapper::-webkit-scrollbar-corner {
+    background: #161b22;
+}
+
+/* Styling untuk konten dalam scroll container - ULTRA COMPACT */
+.gemini-api-grid,
+.management-section.gemini-api-section .gemini-api-grid,
+.management-section:nth-child(3).gemini-api-section .gemini-api-grid {
+    padding: 4px !important; /* Dikurangi drastis dari 8px */
+    display: grid !important;
+    gap: 3px !important; /* Dikurangi drastis dari 6px */
+    grid-template-columns: 1fr !important;
+    min-height: min-content !important;
+}
+
+/* Pastikan management section untuk Gemini menggunakan flexbox, bukan grid */
+.management-section:nth-child(3) {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    max-height: none;
+    overflow: visible;
+}
+
+/* Styling untuk setiap API item - ULTRA COMPACT */
+.api-item,
+.management-section.gemini-api-section .api-item,
+.management-section:nth-child(3).gemini-api-section .api-item {
+    background: #161b22 !important;
+    border: 1px solid #21262d !important;
+    border-radius: 4px !important; /* Dikurangi dari 6px */
+    padding: 4px !important; /* Dikurangi drastis dari 8px */
+    margin-bottom: 0 !important;
+    flex-shrink: 0 !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+/* API item content yang lebih kecil - ULTRA COMPACT */
+.api-item > div,
+.management-section.gemini-api-section .api-item > div,
+.management-section:nth-child(3).gemini-api-section .api-item > div {
+    padding: 3px !important; /* Dikurangi drastis dari 6px */
+    font-size: 10px !important; /* Lebih kecil lagi */
+    background: #161b22 !important;
+    border: 1px solid #21262d !important;
+    border-radius: 3px !important; /* Dikurangi dari 4px */
+}
+
+/* Font yang lebih kecil untuk API key text - ULTRA COMPACT */
+.api-item .api-key-text,
+.management-section.gemini-api-section .api-key-text,
+.management-section:nth-child(3).gemini-api-section .api-key-text {
+    font-size: 9px !important; /* Lebih kecil lagi dari 10px */
+    font-weight: 600 !important;
+    color: #c9d1d9 !important;
+    margin-bottom: 1px !important;
+}
+
+/* Font yang lebih kecil untuk tanggal - ULTRA COMPACT */
+.api-item .api-date-text,
+.management-section.gemini-api-section .api-date-text,
+.management-section:nth-child(3).gemini-api-section .api-date-text {
+    font-size: 7px !important; /* Lebih kecil lagi dari 8px */
+    margin-top: 1px !important; /* Dikurangi dari 2px */
+    color: #8b949e !important;
+    line-height: 1.2 !important;
+}
+
+/* Responsive untuk mobile */
+@media (max-width: 768px) {
+    .admin-panel-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Specific styling untuk Gemini API section - ULTRA COMPACT VERSION */
+.management-section:nth-child(3).gemini-api-section {
+    grid-column: 1 / -1 !important; /* Full width untuk section Gemini */
+    margin-top: 8px !important; /* Dikurangi lagi */
+    height: auto !important;
+    min-height: fit-content !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    padding: 8px !important; /* Dikurangi drastis dari 12px */
+    background: #161b22 !important;
+    border: 1px solid #0366d6 !important; /* Dikurangi dari 2px */
+    border-radius: 6px !important; /* Dikurangi dari 8px */
+}
+
+/* Pastikan tidak ada konflik dengan grid parent */
+.gemini-api-section {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+/* Scroll container dengan tinggi minimum - ULTRA COMPACT */
+.gemini-scroll-wrapper,
+.management-section.gemini-api-section .gemini-scroll-wrapper,
+.management-section:nth-child(3).gemini-api-section .gemini-scroll-wrapper {
+    min-height: 60px !important; /* Dikurangi drastis dari 100px */
+    max-height: 250px !important; /* Dikurangi drastis dari 350px */
+    height: auto !important;
+    position: relative !important;
+}
+
+/* Styling untuk empty state - COMPACT */
+.gemini-empty-state {
+    padding: 25px 15px; /* Dikurangi dari 40px 20px */
+    text-align: center;
+    background: #161b22;
+    border: 1px solid #21262d;
+    border-radius: 6px;
+    font-size: 13px; /* Dikurangi dari default */
+}
+
+.gemini-empty-state p {
+    margin: 5px 0; /* Dikurangi margin */
+}
+
+/* Form input yang lebih kecil - VERSI LEBIH SPECIFIC */
+.management-section.gemini-api-section input[type="text"],
+.management-section:nth-child(3).gemini-api-section input[type="text"] {
+    padding: 6px 10px !important; /* Lebih kecil lagi */
+    font-size: 12px !important; /* Lebih kecil lagi */
+    height: 32px !important; /* Lebih kecil lagi */
+    border: 1px solid #30363d !important;
+    border-radius: 4px !important;
+    background-color: #161b22 !important;
+    color: #c9d1d9 !important;
+}
+
+/* Button yang lebih kecil - VERSI LEBIH SPECIFIC */
+.management-section.gemini-api-section button,
+.management-section:nth-child(3).gemini-api-section button {
+    padding: 6px 12px !important; /* Lebih kecil lagi */
+    font-size: 11px !important; /* Lebih kecil lagi */
+    height: 32px !important; /* Lebih kecil lagi */
+    font-weight: 500 !important;
+}
+
+/* Header yang lebih kecil */
+.management-section.gemini-api-section h4,
+.management-section:nth-child(3).gemini-api-section h4 {
+    font-size: 14px !important; /* Dikurangi dari 16px */
+    margin-bottom: 8px !important;
+    margin-top: 0 !important;
+}
+
+/* Counter text yang lebih kecil */
+.management-section.gemini-api-section h5,
+.management-section:nth-child(3).gemini-api-section h5 {
+    font-size: 11px !important; /* Dikurangi dari 12px */
+    margin-bottom: 6px !important;
+    font-weight: 500 !important;
+}
+
+/* Margin form yang lebih kecil */
+.management-section.gemini-api-section > div:first-child {
+    margin-bottom: 15px; /* Dikurangi dari 20px */
+}

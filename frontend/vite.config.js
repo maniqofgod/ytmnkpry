@@ -1,0 +1,17 @@
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+
+// https://vite.dev/config/
+export default defineConfig({
+  plugins: [react()],
+  server: {
+    port: 6033,
+    proxy: {
+      // String shorthand: `/api` -> `http://localhost:7033/api`
+      '/api': {
+        target: 'http://localhost:7033',
+        changeOrigin: true,
+      },
+    }
+  },
+})

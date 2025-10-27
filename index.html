@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rencana Proyek - Migrasi ytuploader</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="glass-card">
+            <h1>Rencana Proyek: Migrasi <code>ytuploader</code> ke Aplikasi Web</h1>
+            <p>Panduan teknis untuk rekayasa ulang aplikasi desktop menjadi solusi web full-stack JavaScript.</p>
+        </header>
+
+        <main>
+            <section id="tujuan" class="glass-card">
+                <h2>1. Tujuan Utama</h2>
+                <p><strong>Misi:</strong> Mengganti aplikasi desktop yang ada dengan solusi web modern yang sepenuhnya ditulis dalam JavaScript, mereplikasi semua fungsionalitas inti.</p>
+                <h3>Kriteria Keberhasilan:</h3>
+                <ul>
+                    <li>Aplikasi berfungsi penuh di browser.</li>
+                    <li>Autentikasi pengguna via Google.</li>
+                    <li>Manajemen daftar video (tambah, edit, kelola).</li>
+                    <li>Proses upload massal dengan progres real-time.</li>
+                    <li>Seluruh basis kode menggunakan JavaScript/TypeScript.</li>
+                </ul>
+            </section>
+
+            <section id="arsitektur" class="glass-card">
+                <h2>2. Arsitektur & Tumpukan Teknologi</h2>
+                <div class="tech-stack">
+                    <div class="tech-column">
+                        <h3>Frontend: React</h3>
+                        <ul>
+                            <li><strong>Framework:</strong> React.js</li>
+                            <li><strong>Build Tool:</strong> Vite</li>
+                            <li><strong>Styling:</strong> Tailwind CSS</li>
+                            <li><strong>Komunikasi:</strong> Axios & socket.io-client</li>
+                        </ul>
+                    </div>
+                    <div class="tech-column">
+                        <h3>Backend: Node.js</h3>
+                        <ul>
+                            <li><strong>Framework:</strong> Express.js</li>
+                            <li><strong>ORM:</strong> Prisma</li>
+                            <li><strong>API Google:</strong> googleapis</li>
+                            <li><strong>Real-time:</strong> socket.io</li>
+                        </ul>
+                    </div>
+                    <div class="tech-column">
+                        <h3>Database</h3>
+                        <ul>
+                            <li><strong>Sistem:</strong> PostgreSQL</li>
+                            <li><strong>Model:</strong> Users, AuthTokens, Videos</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="rencana-eksekusi" class="glass-card">
+                <h2>3. Rencana Eksekusi Bertahap</h2>
+                <div class="milestones">
+                    <div class="milestone">
+                        <h3>Milestone 1: Fondasi Proyek</h3>
+                        <p>Inisialisasi proyek backend (Node.js) dan frontend (React), serta penyiapan environment variables.</p>
+                    </div>
+                    <div class="milestone">
+                        <h3>Milestone 2: Autentikasi</h3>
+                        <p>Implementasi alur Google OAuth2 di backend dan pembuatan halaman login di frontend.</p>
+                    </div>
+                    <div class="milestone">
+                        <h3>Milestone 3: Fungsionalitas Video</h3>
+                        <p>Pembuatan endpoint CRUD untuk video, UI manajemen video, dan integrasi WebSockets untuk progres upload.</p>
+                    </div>
+                    <div class="milestone">
+                        <h3>Milestone 4: Pengujian & Penyelesaian</h3>
+                        <p>Pengujian end-to-end, penanganan error, dan penyelesaian UI/UX.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>

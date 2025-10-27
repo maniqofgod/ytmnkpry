@@ -1,0 +1,41 @@
+.panel-container-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    font-size: 0.875rem;
+}
+
+.form-group {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.form-group label {
+    font-weight: 500;
+    text-align: right;
+    font-size: 0.875rem;
+    color: #c9d1d9; /* Warna label terang */
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #30363d; /* Border gelap */
+    border-radius: 6px;
+    font-size: 0.875rem;
+    box-sizing: border-box;
+    resize: vertical;
+    background-color: #0d1117; /* Latar belakang input gelap */
+    color: #c9d1d9; /* Teks input terang */
+}
+
+.actions-container {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: flex-end; /* Tombol di sebelah kanan */
+    grid-column: 1 / -1; /* Tombol mengambil seluruh lebar grid */
+}
