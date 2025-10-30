@@ -64,6 +64,7 @@ const DashboardContent = ({ defaultSettings }) => {
             description: defaultSettings.description,
             tags: defaultSettings.tags,
             category: defaultSettings.category,
+            privacyStatus: defaultSettings.privacyStatus,
         };
         setVideos(prevVideos => [...prevVideos, newVideo]);
         addLog(`Video ditambahkan: ${file.name}`);

@@ -59,7 +59,7 @@ function UploadControlPanel({ videos, accountId, onUpdateVideoStatus }) {
             formData.append('title', video.title || '');
             formData.append('description', video.description || '');
             formData.append('categoryId', video.category || '22');
-            formData.append('privacyStatus', video.privacyStatus || 'private');
+            formData.append('privacyStatus', video.privacyStatus || 'public');
             formData.append('tags', video.tags || '');
 if (video.thumbnail) {
     formData.append('thumbnailFile', video.thumbnail);

@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'http://localhost:7033/api';
+const API_URL = 'https://yt.1337.edu.pl/api';
 
 const getAuthHeaders = () => {
     const token = localStorage.getItem('authToken');

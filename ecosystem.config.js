@@ -2,7 +2,7 @@ module.exports = {
   apps: [
     {
       name: 'ytuploader-backend',
-      script: './backend/server.js',
+      script: 'server.js',
       cwd: './backend',
       instances: 1,
       exec_mode: 'fork',
@@ -19,7 +19,8 @@ module.exports = {
     },
     {
       name: 'ytuploader-frontend',
-      script: './server.js',
+      script: 'serve',
+      args: ['-l', '5173'],
       cwd: './frontend/dist',
       env: {
         NODE_ENV: 'production'
